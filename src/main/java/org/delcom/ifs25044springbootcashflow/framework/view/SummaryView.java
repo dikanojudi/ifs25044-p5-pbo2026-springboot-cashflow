@@ -24,6 +24,7 @@ public class SummaryView extends VerticalLayout {
 
     public SummaryView(FinanceUseCase financeUseCase, FinancePresenter presenter) {
         setSizeFull();
+        getElement().setAttribute("role", "main");
         setPadding(true);
         setSpacing(false);
         getStyle().set("background", "#F3F4F6");

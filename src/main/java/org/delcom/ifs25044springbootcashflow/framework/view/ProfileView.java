@@ -19,6 +19,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.server.streams.UploadHandler;
 import org.delcom.ifs25044springbootcashflow.adapter.storage.FileStorage;
 import org.delcom.ifs25044springbootcashflow.domain.entity.User;
@@ -32,6 +33,7 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Route(value = "profile", layout = MainLayout.class)
+@RouteAlias(value = "settings", layout = MainLayout.class)
 @PageTitle("Profil")
 public class ProfileView extends VerticalLayout {
 
@@ -47,6 +49,7 @@ public class ProfileView extends VerticalLayout {
         this.fileStorage = fileStorage;
 
         setSizeFull();
+        getElement().setAttribute("role", "main");
         setPadding(true);
         setSpacing(false);
         getStyle().set("background", "#F3F4F6");
